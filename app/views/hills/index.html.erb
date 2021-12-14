@@ -1,0 +1,5 @@
+<ul>
+<% @hills.each do |hill| %>
+  <li><%= "#{hill.name} [#{hill.latitude}, #{hill.longitude}]" %></li>
+<% end %>
+</ul>
