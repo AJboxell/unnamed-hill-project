@@ -1,0 +1,2 @@
+class Hill < ApplicationRecord
+end
