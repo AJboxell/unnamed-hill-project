@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_19_155833) do
+ActiveRecord::Schema.define(version: 2021_12_20_190701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "climbs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "hill_id", null: false
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["hill_id"], name: "index_climbs_on_hill_id"
+    t.index ["user_id"], name: "index_climbs_on_user_id"
+  end
 
   create_table "hills", force: :cascade do |t|
     t.string "name"
@@ -41,4 +51,6 @@ ActiveRecord::Schema.define(version: 2021_12_19_155833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "climbs", "hills"
+  add_foreign_key "climbs", "users"
 end

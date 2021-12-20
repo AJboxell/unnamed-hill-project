@@ -16,5 +16,6 @@ Hill.create!(name: "Glyder Fawr", latitude: 53.1016, longitude: -4.0284, height:
 Hill.create!(name: "Glyder Fach", latitude: 53.1049, longitude: -4.0085, height: 994, country: "Wales", range: "Glyderau", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
 Hill.create!(name: "Carnedd Dafydd", latitude: 53.1477, longitude: -4.0007, height: 1044, country: "Wales", range: "Carneddau", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
 Hill.create!(name: "Carnedd Llewelyn", latitude: 53.1600, longitude: -3.9701, height: 1064, country: "Wales", range: "Carneddau", category: ["Marilyn", "Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
+Hill.create!(name: "Pen yr Ole Wen", latitude: 53.1376, longitude: -4.0106, height: 978, country: "Wales", range: "Carneddau", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
 
 puts "Finished!"
