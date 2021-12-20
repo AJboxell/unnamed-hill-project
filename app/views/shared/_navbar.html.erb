@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <%= image_tag("home-image.svg", height: '25px', class: 'mr-3') %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,21 +10,28 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to 'Map', hills_path, class: 'nav-link' %>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          <% if current_user %>
+            <%= current_user.username %>
+          <% else %>
+            Log in
+          <% end %>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <% if current_user %>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">My Profile</a>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        <% else %>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Log in', user_session_path, class: 'dropdown-item' %>
+            <%= link_to 'Sign up', new_user_registration_path, class: 'dropdown-item' %>
+          </div>
+        <% end %>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
