@@ -1,3 +1,12 @@
+<%= form_tag hills_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Look for hills over x metres"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary mt-2 mb-2" %>
+<% end %>
+
 <div class="mb-3" style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-markers-value="<%= @markers.to_json %>"

@@ -1,7 +1,11 @@
 class HillsController < ApplicationController
 
   def index
-    @hills = Hill.all
+    if params[:query].present?
+      @hills = Hill.all.select { |hill| hill.height >= params[:query].to_i }
+    else
+      @hills = Hill.all
+    end
     @markers = @hills.map do |hill|
       {
         lat: hill.latitude,
