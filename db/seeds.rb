@@ -23,5 +23,6 @@ Hill.create!(name: "Foel-fras", latitude: 53.1945, longitude: -3.9524, height: 9
 Hill.create!(name: "Foel Grach", latitude: 53.1738, longitude: -3.9631, height: 975, country: "Wales", range: "Carneddau", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
 Hill.create!(name: "Yr Elen", latitude: 53.1666, longitude: -3.9854, height: 962, country: "Wales", range: "Carneddau", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
 Hill.create!(name: "Garnedd Ugain", latitude: 53.0755, longitude: -4.0758, height: 1065, country: "Wales", range: "Snowdon", category: ["Hewitt", "Welsh 3000s", "Nuttall", "Furth"])
+Hill.create!(name: "Cadair Idris", latitude: 52.6994, longitude: -3.9081, height: 893, country: "Wales", category: ["Hewitt", "Marilyn", "Nuttall"])
 
 puts "Finished!"
