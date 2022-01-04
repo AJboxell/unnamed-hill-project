@@ -31,6 +31,7 @@ export default class extends Controller {
     customMarker.style.width = `${marker.width}px`;
     customMarker.style.height = `${marker.height}px`;
     customMarker.idName = `${marker.id}`;
+    customMarker.hill = `${marker.hill}`;
 
     new mapboxgl.Marker(customMarker)
       .setLngLat([marker.lng, marker.lat])

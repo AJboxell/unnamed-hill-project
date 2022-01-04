@@ -4,6 +4,8 @@ export default class extends Controller {
   static targets = ["openCountOutput"]
 
   connect() {
+    console.log("Hello!");
+
     let openCounterController = this;
     this.openCount = 0;
 

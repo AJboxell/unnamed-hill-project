@@ -1,3 +1,8 @@
 <h5><%= hill.name %></h5>
 <p><%= "#{hill.height}m" %></p>
-<a data-toggle="modal" data-target="#climbModal" href="#">Add climb</a>
+<% @climb = Climb.new %>
+<%= simple_form_for @climb, url: climbs_path, method: :post do |f| %>
+  <%= f.input :year, as: :integer %>
+  <%= f.input :hill_id, as: :hidden, input_html: { value: hill.id } %>
+  <%= f.button :submit %>
+<% end %>

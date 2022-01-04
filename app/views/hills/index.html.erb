@@ -13,21 +13,14 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<ul>
-<% @hills.each do |hill| %>
-  <li><%= "#{hill.name} [#{hill.latitude}, #{hill.longitude}]" %></li>
-<% end %>
-</ul>
-
-<div class="modal fade" id="climbModal" tabindex="-1" role="dialog" data-controller="open-counter">
+<div class="modal fade" id="climbModal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <% @climb = Climb.new %>
-        <% @hill = Hill.last %>
-        <%= simple_form_for [@hill, @climb], url: hill_climbs_path(@hill), method: :post do |f| %>
+        <%= simple_form_for @climb, url: climbs_path, method: :post do |f| %>
           <%= f.input :year, as: :integer %>
-          <%#= f.input :hill_id, as: :hidden, input_html: { value: hill.id } %>
+          <%#= f.input :hill_id, as: :hidden, input_html: { value: 51 } %>
           <%= f.button :submit %>
         <% end %>
       </div>

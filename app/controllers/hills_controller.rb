@@ -13,7 +13,8 @@ class HillsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { hill: hill }),
         image_url: helpers.asset_url("mountain.svg"),
         width: hill.height / 33,
-        height: hill.height / 33
+        height: hill.height / 33,
+        hill: hill
       }
     end
   end
