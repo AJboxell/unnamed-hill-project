@@ -1,0 +1,5 @@
+<ul>
+<% @climbs.each do |climb| %>
+  <li><%= "#{climb.hill.name} (#{climb.year})" %></li>
+<% end %>
+</ul>
