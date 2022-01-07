@@ -4,5 +4,6 @@
 <%= simple_form_for @climb, url: climbs_path, method: :post do |f| %>
   <%= f.input :year, as: :integer %>
   <%= f.input :hill_id, as: :hidden, input_html: { value: hill.id } %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
   <%= f.button :submit %>
 <% end %>
