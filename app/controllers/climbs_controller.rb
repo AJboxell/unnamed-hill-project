@@ -1,5 +1,4 @@
 class ClimbsController < ApplicationController
-
   def index
     @climbs = Climb.where(user: current_user)
   end

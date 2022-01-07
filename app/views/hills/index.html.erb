@@ -12,22 +12,3 @@
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
-<div class="modal fade" id="climbModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <% @climb = Climb.new %>
-        <%= simple_form_for @climb, url: climbs_path, method: :post do |f| %>
-          <%= f.input :year, as: :integer %>
-          <%#= f.input :hill_id, as: :hidden, input_html: { value: 51 } %>
-          <%= f.button :submit %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
