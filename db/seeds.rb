@@ -1,13 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Clearing data..."
+Climb.destroy_all
 Hill.destroy_all
+User.destroy_all
+
+puts "adding admin..."
+User.create!(email: "alexjboxell@gmail.com", username: "admin", password: "123456")
+puts "Welcome, Alex"
 
 puts "Populating Welsh peaks..."
 Hill.create!(name: "Snowdon/Yr Wyddfa", latitude: 53.0685, longitude: -4.0763, height: 1085, country: "Wales", range: "Snowdon", category: ["UK Three Peaks", "Marilyn", "Furth", "Hewitt", "Nuttall", "Welsh 3000s"])
