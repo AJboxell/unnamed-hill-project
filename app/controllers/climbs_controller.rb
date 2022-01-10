@@ -1,6 +1,6 @@
 class ClimbsController < ApplicationController
   def index
-    @climbs = Climb.where(user: current_user)
+    @climbs = Climb.where(user: current_user).order(year: :desc)
   end
 
   def create
