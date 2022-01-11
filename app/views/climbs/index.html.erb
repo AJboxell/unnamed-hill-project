@@ -1,9 +1,10 @@
 <% @climbs.group_by { |result| result.year }.each do |year, climbs| %>
-  <%= year %>
-  <ul>
-    <% climbs.each do |climb| %>
-      <li><%= climb.hill.name %></li>
-    <% end %>
-  </ul>
+  <div class="card-year"><%= year %>
+    <ul>
+      <% climbs.each do |climb| %>
+        <div class="card-climb"><%= climb.hill.name %></div>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 </ul>
