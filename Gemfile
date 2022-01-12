@@ -33,6 +33,8 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'geocoder'
 gem 'devise'
+gem 'open-uri'
+gem 'json'
 
 group :development, :test do
   gem 'pry-byebug'
