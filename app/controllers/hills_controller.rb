@@ -22,4 +22,17 @@ class HillsController < ApplicationController
   def show
     @hill = Hill.find(params[:id])
   end
+
+  def find_pub
+    Pub.destroy_all
+    @hill = Hill.find(params[:id])
+    url = "https://api.mapbox.com/geocoding/v5/mapbox.places/pub.json?proximity=#{@hill.longitude.to_f},#{@hill.latitude.to_f}&access_token=pk.eyJ1IjoiYWpib3hlbGwiLCJhIjoiY2t2Y2FzZHZiMDNzbDMwbjNxc3M0N3hkMSJ9.1xPb_bMld-VYiN0euzA8iA"
+    serialized = URI.open(url).read
+    @pubs = JSON.parse(serialized)
+    @pubs["features"].each do |item|
+      pub = Pub.new(name: item["place_name"])
+      pub.save!
+    end
+    redirect_to pubs_path
+  end
 end
