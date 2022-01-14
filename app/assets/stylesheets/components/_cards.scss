@@ -1,16 +1,24 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
 }
 
 .card {
-  padding: 64px 16px;
+  padding: 80px 16px;
   text-align: center;
   border-radius: 4px;
-  font-size: 24px;
+  font-size: 40px;
   background-size: cover;
   background-position: center;
+}
+
+.card span {
+  background: rgba(90, 11, 77, 0.4);
+  color: $ghost;
+  padding: 4px 12px;
+  margin: auto;
+  border-radius: 4px;
 }
 
 #card-map {
