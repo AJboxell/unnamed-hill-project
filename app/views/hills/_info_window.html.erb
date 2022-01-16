@@ -1,10 +1,13 @@
 <h5><%= hill.name %></h5>
-<p><%= "#{hill.height}m" %></p>
+<h6><%= "#{hill.height}m" %></h6>
 <% @climb = Climb.new %>
-<%= simple_form_for @climb, url: climbs_path, method: :post do |f| %>
-  <%= f.input :year, as: :integer %>
+<%= simple_form_for @climb, url: climbs_path, method: :post, wrapper_html: {class: "form-inline"} do |f| %>
   <%= f.input :hill_id, as: :hidden, input_html: { value: hill.id } %>
   <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
-  <%= f.button :submit %>
+  <div class="d-flex align-items-center m-0" id="unstretched">
+    <%= f.input :year, label: false, placeholder: 'e.g. 2021' %>
+    <%= f.button :submit, value: 'Climbed!', class: 'btn btn-primary ml-1 mb-3 d-inline' %>
+  </div>
 <% end %>
-<%= link_to 'Find nearest pub!', find_pub_hill_path(hill) %>
+
+<%= link_to 'Find nearest pub', find_pub_hill_path(hill), class: 'btn btn-success mt-1' %>
