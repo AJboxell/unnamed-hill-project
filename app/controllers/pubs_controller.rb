@@ -7,7 +7,7 @@ class PubsController < ApplicationController
         lat: pub.latitude,
         lng: pub.longitude,
         info_window: render_to_string(partial: "pub_info", locals: { pub: pub }),
-        image_url: helpers.asset_url("mountain.svg"),
+        image_url: helpers.asset_url("beer.svg"),
         pub: pub
       }
     end

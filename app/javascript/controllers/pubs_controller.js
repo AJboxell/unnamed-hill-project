@@ -8,6 +8,7 @@ export default class extends Controller {
   }
 
   connect() {
+    console.log("This is pubs")
     mapboxgl.accessToken = this.apiKeyValue;
 
     this.map = new mapboxgl.Map({
@@ -21,23 +22,23 @@ export default class extends Controller {
   }
 
   _addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+  this.markersValue.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
 
-      const customMarker = document.createElement('div');
-      customMarker.className = 'marker';
-      customMarker.style.backgroundImage = `url('${marker.image_url}')`;
-      customMarker.style.backgroundSize = 'contain';
-      customMarker.style.width = '25px';
-      customMarker.style.height = '25px';
-      customMarker.idName = `${marker.id}`;
-      customMarker.pub = `${marker.pub}`;
+    const customMarker = document.createElement('div');
+    customMarker.className = 'marker';
+    customMarker.style.backgroundImage = `url('${marker.image_url}')`;
+    customMarker.style.backgroundSize = 'contain';
+    customMarker.style.width = '25px';
+    customMarker.style.height = '25px';
+    customMarker.idName = `${marker.id}`;
+    customMarker.pub = `${marker.pub}`;
 
-      new mapboxgl.Marker(customMarker)
-        .setLngLat([marker.lng, marker.lat])
-        .setPopup(popup)
-        .addTo(this.map);
-    });
+    new mapboxgl.Marker(customMarker)
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(this.map);
+  });
   }
 
   _fitMapToMarkers() {
