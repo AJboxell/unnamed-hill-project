@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Climb, type: :model do
-  current_user = User.first_or_create!(email: 'dean@example.com', password: 'password')
+  # if tester = User.find(1)
+  #   tester.destroy
+  # end
+  current_user = User.first_or_create!(email: 'robopigeon@test.com', password: 'password', username: 'Pancake')
+  create_hill
 
   it 'has a year' do
     climb = Climb.new(

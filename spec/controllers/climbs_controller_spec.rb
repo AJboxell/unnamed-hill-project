@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe ClimbsController, type: :controller do
 
   login_user
+  create_hill
 
   let(:valid_attributes) {
     { :year => "2000", :user_id => User.last.id, :hill_id => Hill.last.id }
