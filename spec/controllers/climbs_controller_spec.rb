@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ClimbsController, type: :controller do
 
+  User.destroy_all
   login_user
   create_hill
 
