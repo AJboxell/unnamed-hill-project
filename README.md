@@ -2,6 +2,8 @@
 
 A Rails app I'm building for fun and for practice - I decided to focus on some of my favourite things: maps, hills, and pubs.
 
+<img width="805" alt="screenshot-of-map" src="https://user-images.githubusercontent.com/63204926/150325862-e92f0b34-7c48-4c2a-8bb6-90898ce7f281.png">
+
 ### Installing
 
 * Run git clone git@github.com:AJboxell/unnamed-hill-project.git in your terminal
