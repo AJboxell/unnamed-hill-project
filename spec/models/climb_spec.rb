@@ -14,4 +14,14 @@ RSpec.describe Climb, type: :model do
     climb.year = '2000'
     expect(climb).to be_valid
   end
+
+  it 'is attached to a hill' do
+    climb = Climb.new(
+      year: '2020',
+      user: current_user
+    )
+    expect(climb).to_not be_valid
+    climb.hill_id = Hill.last.id
+    expect(climb).to be_valid
+  end
 end
