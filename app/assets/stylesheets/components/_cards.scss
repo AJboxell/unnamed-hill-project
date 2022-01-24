@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
+  margin-bottom: 32px;
 }
 
 .card {
@@ -16,13 +17,21 @@
 .card span {
   background: rgba(90, 11, 77, 0.4);
   color: $ghost;
-  padding: 4px 12px;
+  padding: 4px 16px;
   margin: auto;
   border-radius: 4px;
 }
 
 #card-map {
   background-image: image-url('map-card.png');
+}
+
+#card-pub {
+  background-image: image-url('');
+}
+
+#card-climbs {
+  background-image: image-url('');
 }
 
 .card-year {

@@ -1,7 +1,9 @@
 class HillsController < ApplicationController
 
   def index
-    if params[:query].present?
+    if params[:navquery].present?
+      @hills = Hill.where("name LIKE ?", "%#{params[:navquery]}%")
+    elsif params[:query].present?
       @hills = Hill.all.select { |hill| hill.height >= params[:query].to_i }
     else
       @hills = Hill.all
