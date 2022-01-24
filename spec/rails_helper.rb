@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'devise'
 require_relative 'support/controller_macros'
 require_relative 'support/model_macros'
+require_relative 'support/view_macros'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -66,7 +67,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include FactoryBot::Syntax::Methods
   config.extend ControllerMacros, :type => :controller
   config.extend ModelMacros, :type => :model
+  config.extend ViewMacros, :type => :view
 end
