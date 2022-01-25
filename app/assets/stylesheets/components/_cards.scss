@@ -12,11 +12,10 @@
   font-size: 40px;
   background-size: cover;
   background-position: center;
+  margin-top: 16px;
 }
 
 .card span {
-  background: rgba(90, 11, 77, 0.4);
-  color: $ghost;
   padding: 4px 16px;
   margin: auto;
   border-radius: 4px;
@@ -26,12 +25,24 @@
   background-image: image-url('map-card.png');
 }
 
-#card-pub {
-  background-image: image-url('');
+#card-map span {
+  background: rgba(90, 11, 77, 0.4);
 }
 
+#card-pub {
+  background-image: image-url('pub-card.png');
+}
+
+#card-pub span {
+  background: rgba(21, 122, 110, 0.4);
+  color: $ghost;
+}
 #card-climbs {
-  background-image: image-url('');
+  background-image: image-url('climb-card.png');
+}
+
+#card-climbs span {
+  background: rgba(90, 11, 77, 0.8);
 }
 
 .card-year {
@@ -45,7 +56,7 @@
   background-image: image-url('home-image.svg');
   background-size: cover;
   background-position: center;
-  background-color: rgba(207,209,26,0.7);
+  background-color: rgba(141,128,173,0.6);
 
 }
 
